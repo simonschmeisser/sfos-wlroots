@@ -93,6 +93,7 @@ Development files for %{name}.
 MESON_OPTIONS=(
     # Disable options requiring extra/unpackaged dependencies
     -Dexamples=false
+    -Dallocators=gbm
 )
 
 %{meson} "${MESON_OPTIONS[@]}"
