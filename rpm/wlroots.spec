@@ -61,6 +61,7 @@ BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(wayland-protocols) >= 1.41
 BuildRequires:  pkgconfig(wayland-scanner)
 BuildRequires:  pkgconfig(wayland-server) >= 1.23.1
+BuildRequires:  pkgconfig(xkbcommon)
 
 # libliftoff does not bump soname on API changes
 Requires:       libliftoff%{?_isa} >= %{liftoff_ver}
