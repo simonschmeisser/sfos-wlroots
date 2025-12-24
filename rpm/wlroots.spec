@@ -64,22 +64,7 @@ BuildRequires:  pkgconfig(wayland-client)
 BuildRequires:  pkgconfig(wayland-protocols) >= 1.41
 BuildRequires:  pkgconfig(wayland-scanner)
 BuildRequires:  pkgconfig(wayland-server) >= 1.23.1
-BuildRequires:  pkgconfig(x11-xcb)
-BuildRequires:  pkgconfig(xcb)
-BuildRequires:  pkgconfig(xcb-composite)
-BuildRequires:  pkgconfig(xcb-dri3)
-BuildRequires:  pkgconfig(xcb-errors)
-BuildRequires:  pkgconfig(xcb-ewmh)
-BuildRequires:  pkgconfig(xcb-icccm)
-BuildRequires:  pkgconfig(xcb-present)
-BuildRequires:  pkgconfig(xcb-render)
-BuildRequires:  pkgconfig(xcb-renderutil)
-BuildRequires:  pkgconfig(xcb-res)
-BuildRequires:  pkgconfig(xcb-shm)
-BuildRequires:  pkgconfig(xcb-xfixes)
-BuildRequires:  pkgconfig(xcb-xinput)
-BuildRequires:  pkgconfig(xkbcommon)
-BuildRequires:  pkgconfig(xwayland)
+
 # libliftoff does not bump soname on API changes
 Requires:       libliftoff%{?_isa} >= %{liftoff_ver}
 
@@ -90,8 +75,6 @@ Requires:       libliftoff%{?_isa} >= %{liftoff_ver}
 %package        devel
 Summary:        Development files for %{name}
 Requires:       %{name}%{?_isa} == %{version}-%{release}
-# not required per se, so not picked up automatically by RPM
-Recommends:     pkgconfig(xcb-icccm)
 # for examples
 Suggests:       gcc
 Suggests:       meson >= 0.58.0
