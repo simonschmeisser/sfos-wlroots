@@ -26,10 +26,7 @@ Summary:        A modular Wayland compositor library
 # the underlying licenses.
 License:        MIT
 URL:            https://gitlab.freedesktop.org/wlroots/wlroots
-Source0:        %{url}/-/releases/%{tag}/downloads/%{name}-%{tag}.tar.gz
-Source1:        %{url}/-/releases/%{tag}/downloads/%{name}-%{tag}.tar.gz.sig
-# 0FDE7BE0E88F5E48: emersion <contact@emersion.fr>
-Source2:        https://emersion.fr/.well-known/openpgpkey/hu/dj3498u4hyyarh35rkjfnghbjxug6b19#/gpgkey-0FDE7BE0E88F5E48.gpg
+Source0:        %{name}-%{tag}.tar.gz
 
 # this file is a modification of examples/meson.build so as to:
 # - make it self-contained
@@ -86,7 +83,7 @@ Development files for %{name}.
 
 %prep
 %{gpgverify} --keyring='%{SOURCE2}' --signature='%{SOURCE1}' --data='%{SOURCE0}'
-%autosetup -N -n %{name}-%{tag}
+%autosetup -N -n %{name}-%{tag}/%{name}
 # apply unconditional patches (0..99)
 %autopatch -p1 -M99
 # apply conditional patches (100..)
