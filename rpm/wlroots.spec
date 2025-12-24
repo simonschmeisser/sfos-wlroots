@@ -82,7 +82,6 @@ Development files for %{name}.
 
 
 %prep
-%{gpgverify} --keyring='%{SOURCE2}' --signature='%{SOURCE1}' --data='%{SOURCE0}'
 %autosetup -N -n %{name}-%{tag}/%{name}
 # apply unconditional patches (0..99)
 %autopatch -p1 -M99
