@@ -91,8 +91,8 @@ Development files for %{name}.
 %autopatch -p1 -M99
 # apply conditional patches (100..)
 
-mkdir -p %{_builddir}/include/linux
-cp %{SOURCE4} %{_builddir}/include/linux
+mkdir -p %{_builddir}/%{name}-%{tag}/%{name}/include/linux
+cp %{SOURCE4} %{_builddir}/%{name}-%{tag}/%{name}/include/linux
 
 
 %build
