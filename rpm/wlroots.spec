@@ -91,8 +91,8 @@ Development files for %{name}.
 %autopatch -p1 -M99
 # apply conditional patches (100..)
 
-mkdir -p %{_builddir}/usr/include/linux
-cp %{SOURCE4} %{_builddir}/usr/include/linux
+mkdir -p %{_builddir}/include/linux
+cp %{SOURCE4} %{_builddir}/include/linux
 
 
 %build
@@ -105,12 +105,6 @@ MESON_OPTIONS=(
 )
 
 %{meson} "${MESON_OPTIONS[@]}"
-
-# build environment hacks
-#  - -I%%{_builddir}/usr/include           for the input-event-codes.h kernel header
-export CFLAGS="${CFLAGS}     -I%{_builddir}/usr/include"
-export CXXFLAGS="${CXXFLAGS} -I%{_builddir}/usr/include"
-
 %{meson_build}
 
 
