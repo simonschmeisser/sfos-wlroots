@@ -95,6 +95,7 @@ MESON_OPTIONS=(
     -Dexamples=false
     -Dallocators=gbm
     -Dbackends=drm,libinput
+    -Dxwayland=disabled
 )
 
 %{meson} "${MESON_OPTIONS[@]}"
