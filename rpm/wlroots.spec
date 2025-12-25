@@ -33,6 +33,8 @@ Source0:        %{name}-%{tag}.tar.gz
 # - only has targets for examples known to compile well (cf. "examples) global)
 Source3:        examples.meson.build
 
+Source4:    input-event-codes.h
+
 # Upstream patches
 
 # Fedora patches
@@ -89,6 +91,9 @@ Development files for %{name}.
 %autopatch -p1 -M99
 # apply conditional patches (100..)
 
+mkdir -p %{_builddir}/usr/include/linux
+cp %{SOURCE4} %{_builddir}/usr/include/linux
+
 
 %build
 MESON_OPTIONS=(
@@ -100,6 +105,12 @@ MESON_OPTIONS=(
 )
 
 %{meson} "${MESON_OPTIONS[@]}"
+
+# build environment hacks
+#  - -I%%{_builddir}/usr/include           for the input-event-codes.h kernel header
+export CFLAGS="${CFLAGS}     -I%{_builddir}/usr/include"
+export CXXFLAGS="${CXXFLAGS} -I%{_builddir}/usr/include"
+
 %{meson_build}
 
 
