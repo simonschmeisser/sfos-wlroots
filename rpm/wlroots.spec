@@ -110,7 +110,7 @@ MESON_OPTIONS=(
 
 %install
 %{meson_install}
-#install -pm0644 -D '%{SOURCE3}' '%{buildroot}/%{_pkgdocdir}/examples/meson.build'
+# install -pm0644 -D '%{SOURCE3}' '%{buildroot}/%{_pkgdocdir}/examples/meson.build'
 
 
 %check
@@ -124,7 +124,7 @@ MESON_OPTIONS=(
 
 
 %files  devel
-%doc %{_pkgdocdir}/examples
+# %doc %{_pkgdocdir}/examples
 %{_includedir}/wlroots-%{abi_ver}/wlr
 %{_libdir}/pkgconfig/wlroots-%{abi_ver}.pc
 
