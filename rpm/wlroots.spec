@@ -94,6 +94,7 @@ MESON_OPTIONS=(
     # Disable options requiring extra/unpackaged dependencies
     -Dexamples=false
     -Dallocators=gbm
+    -Dbackends=drm,libinput
 )
 
 %{meson} "${MESON_OPTIONS[@]}"
