@@ -110,7 +110,7 @@ MESON_OPTIONS=(
 
 %install
 %{meson_install}
-install -pm0644 -D '%{SOURCE3}' '%{buildroot}/%{_pkgdocdir}/examples/meson.build'
+#install -pm0644 -D '%{SOURCE3}' '%{buildroot}/%{_pkgdocdir}/examples/meson.build'
 
 
 %check
